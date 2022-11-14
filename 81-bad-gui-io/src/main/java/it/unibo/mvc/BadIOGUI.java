@@ -5,6 +5,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -41,15 +43,17 @@ public class BadIOGUI {
     public BadIOGUI() {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
+        final JPanel newPanel = new JPanel();
+        newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.X_AXIS));
         final JButton write = new JButton("Write on file");
+        newPanel.add(write);
+        final JButton read = new JButton("Read");
+        newPanel.add(read);
+       
+        canvas.add(newPanel, BorderLayout.CENTER);
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        final JPanel newPanel = new JPanel();
-        newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.X_AXIS));
-        newPanel.add(write);
-        final JButton read = new JButton("Read on file");
-        newPanel.add(read);
         /*
          * Handlers
          */
@@ -85,7 +89,7 @@ public class BadIOGUI {
                     exc.printStackTrace();
                 }
             }
-        })
+        });
     }
 
     private void display() {
