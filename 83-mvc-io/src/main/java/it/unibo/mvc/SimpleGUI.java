@@ -1,5 +1,6 @@
 package it.unibo.mvc;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -56,9 +57,7 @@ public final class SimpleGUI {
 
         history.addActionListener ( new ActionListener() {
             public void actionPerformed(final ActionEvent act){
-                for (final String string : cntrl.printedStrings()){
-                    textArea.append(string + "\n");
-                }
+                textArea.setText(cntrl.printedStrings().toString() + "\n");
             }
                 
         });
