@@ -1,6 +1,5 @@
 package it.unibo.mvc;
 
-
 /**
  * Encapsulates the concept of configuration.
  */
@@ -71,6 +70,10 @@ public final class Configuration {
         private int max = MAX;
         private int attempts = ATTEMPTS;
         private boolean consumed = false;
+
+        
+
+        
 
         /**
          * @param min the minimum value
